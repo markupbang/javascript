@@ -1,0 +1,43 @@
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Object</title>
+</head>
+<body>
+
+<ul id="name-wrap">
+</ul>
+
+<script>
+    var grades = {
+        'aaa': 111,
+        'bbb': 222,
+        'ccc': 333
+    };
+    console.log(grades['aaa']);
+    console.log(grades.aaa);
+
+    var arr = ['a','b','c'];
+    for(var i = 0; i < arr.length; i++) {
+        console.log(arr[i]);
+    }
+    for(key in arr) {
+        console.log('key:' + key + ' value:' + arr[key]);
+    }
+
+    var names = {
+        'firstName': 111,
+        'secondName': 222,
+        'thirdName': 333
+    };
+    for(var name in names){
+        var classnames= document.getElementById('name-wrap');
+        classnames.innerHTML += '<li>' + 'name:' + name + ' value:' + names[name] +'</li>';
+    }
+</script>
+
+
+</body>
+</html>
