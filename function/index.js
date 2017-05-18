@@ -12,7 +12,6 @@ var sortfunc = function(a, b) {
 numbers.sort(sortfunc); //sortfunc = 콜백함수
 console.log(numbers);
 
-
 // Ajax
 // $.get('url', function(result){
 //     console.log(result);
@@ -49,3 +48,41 @@ ghost.set_title('에일리언');
 
 console.log(ghost.get_title());
 console.log(matrix.get_title());
+
+// 클로저의 응용
+var arr = [];
+// for(var i = 0; i < 5; i++) {
+//     arr[i] = function(){
+//         return i;
+//     };
+//     console.log(arr[i]());
+// }
+// for(var index in arr) {
+//     console.log(arr[index]());
+// }
+
+for(var i = 0; i < 5; i++) {
+    arr[i] = function(){
+        return i;
+    }
+}
+for(var index in arr) {
+    console.log(arr[index]());
+}
+
+// Arguments
+var sum = function() {
+  _sum = 0;
+  for(var i = 0; i < arguments.length; i++) {
+    _sum += arguments[i];
+  }
+  return _sum;
+}
+console.log('Arguments result : ' + sum(1,2,3,4));
+
+// 매개변수의 수
+var argnum = function(arg) {
+    console.log('argnum length :' + argnum.length);
+    console.log('arguments length :' + arguments.length);
+}
+argnum();
