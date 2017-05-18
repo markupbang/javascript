@@ -21,6 +21,7 @@
     };
     console.log(cal(increase, 10));
 -
+
     var cal = function(mode) {
         var funcs = {
             'plus': function(left, right) {return left + right},
