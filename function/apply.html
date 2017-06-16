@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>함수의 호출 - apply</title>
+</head>
+<body>
+
+  <script>
+  var o1 = {v1:1, v2:3, v3:8},
+      o2 = {v1:5, v2:9};
+  function sum() {
+      var _sum = 0;
+      for(name in this) {
+        //   if(typeof this[name] !== 'function') {
+        console.log(name);
+        _sum += this[name];
+        //   }
+      }
+      return _sum;
+  }
+  console.log(sum.apply(o1));
+  console.log(sum.apply(o2));
+  </script>
+</body>
+</html>
