@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Prototype</title>
+</head>
+<body>
+
+<script>
+    // step 1
+    function Func(name) {
+        this.name = name;
+        this.introduce = function() {
+            return "My name is " + this.name;
+        }
+    }
+    var o = new Func("clair");
+    document.write(o.introduce() + "<br><br>");
+
+    // step 2
+    function Person(name) {
+        this.name = name;
+    }
+    Person.prototype.name = null;
+    Person.prototype.introduce = function() {
+        return "My name is " + this.name;
+    }
+    var P = new Person('clair bang');
+    document.write(P.introduce() + "<br><br>");
+
+    //step 3
+    function Programmer(name) {
+        this.name = name;
+    }
+    Programmer.prototype = new Person();
+    var P1 = new Programmer('Programmer bang');
+    document.write(P1.introduce() + "<br><br>");
+</script>
+</body>
+</html>

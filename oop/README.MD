@@ -76,22 +76,22 @@ this는 함수 내에서 함수 호출 맥락(context)를 의미한다. 맥락�
 자바스크립트가 얼마나 위험한 언어인가를 보여주는 예제 [apply, call]
 >apply
 
-var p = {},
-    o = {};
+    var p = {},
+        o = {};
 
-function func() {
-    switch(this){
-        case p:
-            document.write("this p<br/><br/>");
-            break;
-        case o:
-            document.write("this o<br/><br/>");
-            break;
-        case window:
-            document.write("this window<br/><br/>");
-            break;
-    };
-}
-func();
-func.apply(o);
-func.apply(p);
+    function func() {
+        switch(this){
+            case p:
+                document.write("this p<br/><br/>");
+                break;
+            case o:
+                document.write("this o<br/><br/>");
+                break;
+            case window:
+                document.write("this window<br/><br/>");
+                break;
+        };
+    }
+    func();
+    func.apply(o);
+    func.apply(p);
