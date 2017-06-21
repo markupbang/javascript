@@ -9,6 +9,19 @@
 <body>
 
 <script>
+    //PROTOTYPE CHAIN
+    function Ultra() {
+        Ultra.prototype.ultraProp = true;
+    }
+    var Super = function(){};
+    Super.prototype = new Ultra();
+
+    function Sub() {}
+    Sub.prototype = new Super();
+
+    var o = new Sub();
+    console.log(o.ultraProp);
+
     // step 1
     function Func(name) {
         this.name = name;

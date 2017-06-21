@@ -95,3 +95,17 @@ this는 함수 내에서 함수 호출 맥락(context)를 의미한다. 맥락�
     func();
     func.apply(o);
     func.apply(p);
+
+## 상속
+#### PROTOTYPE CHAIN
+    function Ultra() {
+        Ultra.prototype.ultraProp = true;
+    }
+    var Super = function(){};
+    Super.prototype = new Ultra();
+
+    function Sub() {}
+    Sub.prototype = new Super();
+
+    var o = new Sub();
+    console.log(o.ultraProp);
