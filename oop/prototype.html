@@ -15,12 +15,15 @@
     }
     var Super = function(){};
     Super.prototype = new Ultra();
+    console.log(Super.prototype.ultraProp);//case1
 
     function Sub() {}
-    Sub.prototype = new Super();
+    var s = new Super();
+    s.ultraProp = 2;
+    Sub.prototype = s;
 
     var o = new Sub();
-    console.log(o.ultraProp);
+    console.log(o.ultraProp);//case2
 
     // step 1
     function Func(name) {
