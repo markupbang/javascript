@@ -1,4 +1,4 @@
-# Obeject Oriented Programming(OOP)
+## Obeject Oriented Programming(OOP)
 
 ### 부품화
 > 기능별로 로직을 묶어(메소드 별) 분리한다.
@@ -131,3 +131,47 @@ this는 함수 내에서 함수 호출 맥락(context)를 의미한다. 맥락�
     };
     var arr = new Array('clair', 'ggang', 'helong', 'youngpal');
     console.log(arr.random());
+
+## Object(광역 객체)
+Object 객체는 객체의 가장 기본적인 형태를 가지고 있는, 아무것도 상속받지 않은 순수한 객체
+자바스크립트에서는 값을 저장하는 기본적인 단위로 Object를 사용함
+Object API [https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Global_Objects/Object]
+
+### Object 확장
+메소드를 쓰는 방법
+    //Object.keys()
+    var arr = [1,2,3];
+    console.log(Object.keys(arr));//keys: key값을 배열로 나타내줌
+
+    //Object.prototype.toString()
+    //.prototype이 끼어있는 메소드는 객체를 생성하고 쓴다.
+
+    var o = new Object();
+    console.log(o.toString());//객체가 가지고 있는 값을 뽑아줌
+
+    var a = new Array(1,2,3);
+    console.log(a.toString());
+
+### Object 확장의 위험
+    Object.prototype.contain = function(neddle) {
+        for(var name in this) {
+            if(this[name] === neddle) {
+                return true;
+            }
+        }
+        return false;
+    }
+    var o = {'name': 'clair', 'age': 36};
+    var a = ['ggang', 'helong', 'youngpal'];
+
+    for(var name in o) {
+        console.log(name);
+    };
+
+    for(var name in o) {
+        if(o.hasOwnProperty(name)) console.log(name);
+    };
+
+    for(var name in a) {
+        if(a.hasOwnProperty(name)) console.log(name);
+    };

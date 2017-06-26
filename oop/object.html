@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Object API</title>
+</head>
+<body>
+    <h1>Object API - 표준 내장 객체</h1>
+    <script>
+    //메소드가 prototype을 필요로 하나 않하나에 따라 사용방법이 다름
+        //Object.keys()
+        var arr = [1,2,3];
+        console.log(Object.keys(arr));//keys: key값을 배열로 나타내줌
+
+        //Object.prototype.toString()
+        //객체를 생성하고 쓴다.
+        var o = new Object();
+        console.log(o.toString());//객체가 가지고 있는 값을 뽑아줌
+
+        var a = new Array(1,2,3);
+        console.log(a.toString());
+
+
+        //object 확장의 위험
+        Object.prototype.contain = function(neddle) {
+            for(var name in this) {
+                if(this[name] === neddle) {
+                    return true;
+                }
+            }
+            return false;
+        }
+        var oo = {'name': 'clair', 'age': 36};
+        var aa = ['ggang', 'helong', 'youngpal'];
+
+        for(var name in oo) {
+            console.log(name);
+        };
+
+        for(var name in oo) {
+            if(oo.hasOwnProperty(name)) console.log(name);
+        };
+
+        for(var name in aa) {
+            if(aa.hasOwnProperty(name)) console.log(name);
+        };
+
+
+    </script>
+    <h2>Object 확장</h2>
+</body>
+</html>
