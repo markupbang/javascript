@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>표준 내장 객체의 확장</title>
+</head>
+<body>
+<script>
+
+//step 1
+// var array = ['clair', 'ggang', 'helong', 'youngpal'];
+// var index = Math.floor(array.length*Math.random());
+// console.log(array[index]);
+
+//step 2
+Array.prototype.random = function() {
+    var index = Math.floor(this.length*Math.random());
+    return this[index];
+};
+var arr = new Array('clair', 'ggang', 'helong', 'youngpal');
+console.log(arr.random());
+</script>
+</body>
+</html>

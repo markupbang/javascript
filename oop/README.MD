@@ -109,3 +109,25 @@ this는 함수 내에서 함수 호출 맥락(context)를 의미한다. 맥락�
 
     var o = new Sub();
     console.log(o.ultraProp);
+
+## 표준 내장 객체(Standard Built-in Object)
+> 자바스크립트가 기본적으로 가지고 있는 객체들
+
+.Object
+.Function
+.Array
+.String
+.Boolean
+.Number
+.Math
+.Date
+.RegExp
+
+### 배열의 확장
+내장 객체의 prototype을 확장
+    Array.prototype.random = function() {
+        var index = Math.floor(this.length*Math.random());
+        return this[index];
+    };
+    var arr = new Array('clair', 'ggang', 'helong', 'youngpal');
+    console.log(arr.random());
